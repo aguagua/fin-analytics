@@ -10,8 +10,7 @@ namespace FinPlusAnalytics
     public class Market
     {
         public string Name { get; private set; } 
-        private static volatile Market _instance;
-        private static object _lock = new Object();
+        
         private IDictionary<string, YieldCurve> _yieldCurves; 
 
         public Market(string name) 

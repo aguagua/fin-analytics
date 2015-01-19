@@ -8,9 +8,7 @@ namespace FinPlusAnalytics
 {
     public class Markets
     {
-        private static volatile Markets _instance;
-        private static object _lock = new Object();
-        private IDictionary<string, Market> _markets;
+        private static IDictionary<string, Market> _markets;
 
         public Markets()
         {
@@ -30,23 +28,6 @@ namespace FinPlusAnalytics
             }
 
             return market;
-        }
-
-        public static Markets Instance
-        {
-            get 
-            {
-                if (_instance == null) 
-                {
-                    lock (_lock) 
-                    {
-                        if (_instance == null) 
-                            _instance = new Markets();
-                    }
-                }
-
-                return _instance;
-            }
         }
     }
 }
