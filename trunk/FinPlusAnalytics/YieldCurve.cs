@@ -13,8 +13,7 @@ namespace FinPlusAnalytics
 
         public YieldCurve(string marketName, string curveName, string discountCurveName, int settlementDate, string rates, string dayCount, double tolerance, string holidays)
         {
-            _markets = Markets.Instance;
-            _market = _markets.GetMarket(marketName);
+            _market = _markets.Market(marketName);
 
             //    std::vector<std::string> ratesVector = stringToVector(rates);
             //    Calendar calendar = Holidays(holidays);
